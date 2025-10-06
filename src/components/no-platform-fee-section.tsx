@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { CreditCard, Wallet, Zap } from "lucide-react";
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function NoPlatformFeeSection() {
   return (
@@ -116,20 +115,84 @@ export function NoPlatformFeeSection() {
           >
             <div className="relative max-w-lg mx-auto">
               
-              {/* Main credit card visual */}
+              {/* Custom Credit Card Visual */}
               <motion.div
                 className="relative"
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1758908176211-5bd0932f956a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjcmVkaXQlMjBjYXJkJTIwbWluaW1hbGlzdCUyMGRlc2lnbnxlbnwxfHx8fDE3NTk3NjU3MTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Premium Credit Card"
-                  className="w-full h-auto rounded-3xl shadow-2xl"
-                />
-                
-                {/* Glowing overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00C38A]/10 to-transparent rounded-3xl" />
+                <div className="relative bg-gradient-to-br from-[#00C38A] via-[#00E598] to-[#00C38A] rounded-3xl p-8 aspect-[1.6/1] shadow-2xl overflow-hidden">
+                  {/* Card Pattern */}
+                  <div className="absolute inset-0 opacity-20">
+                    <div 
+                      className="w-full h-full"
+                      style={{
+                        backgroundImage: `
+                          linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                          linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
+                          linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
+                          linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%)
+                        `,
+                        backgroundSize: '20px 20px',
+                        backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+                      }}
+                    />
+                  </div>
+                  
+                  {/* Card Content */}
+                  <div className="relative z-10 h-full flex flex-col justify-between text-white">
+                    {/* Top Section */}
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <div className="text-sm opacity-80 mb-1">PayStreet Card</div>
+                        <div className="text-xs opacity-60">Premium Business</div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                        <CreditCard className="w-4 h-4" />
+                      </div>
+                    </div>
+                    
+                    {/* Middle Section - Card Number */}
+                    <div className="space-y-2">
+                      <div className="flex space-x-2 text-lg font-mono">
+                        <span>****</span>
+                        <span>****</span>
+                        <span>****</span>
+                        <span>1234</span>
+                      </div>
+                    </div>
+                    
+                    {/* Bottom Section */}
+                    <div className="flex justify-between items-end">
+                      <div>
+                        <div className="text-xs opacity-60 mb-1">VALID THRU</div>
+                        <div className="text-sm font-mono">12/28</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs opacity-60 mb-1">PLATFORM FEE</div>
+                        <motion.div 
+                          className="text-2xl font-bold"
+                          animate={{
+                            scale: [1, 1.1, 1]
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          $0
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Card Chip */}
+                  <div className="absolute top-16 left-8 w-8 h-6 bg-gradient-to-br from-yellow-200 to-yellow-400 rounded opacity-80" />
+                  
+                  {/* Glowing overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl" />
+                </div>
               </motion.div>
 
               {/* Floating zero balance indicator */}

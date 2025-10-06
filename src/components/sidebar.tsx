@@ -7,7 +7,8 @@ import {
   BarChart3,
   Settings,
   HelpCircle,
-  X
+  X,
+  ArrowLeft
 } from 'lucide-react';
 import { Button } from './ui/button';
 import { motion, AnimatePresence } from 'motion/react';
@@ -18,6 +19,7 @@ interface SidebarProps {
   onNavigate: (screen: Screen) => void;
   isOpen: boolean;
   onClose: () => void;
+  onReturnToLanding?: () => void;
 }
 
 const menuItems = [
@@ -29,7 +31,7 @@ const menuItems = [
   { id: 'analytics' as Screen, label: 'Analytics', icon: BarChart3 },
 ];
 
-export function Sidebar({ currentScreen, onNavigate, isOpen, onClose }: SidebarProps) {
+export function Sidebar({ currentScreen, onNavigate, isOpen, onClose, onReturnToLanding }: SidebarProps) {
   return (
     <>
       {/* Mobile Overlay */}
@@ -129,6 +131,19 @@ export function Sidebar({ currentScreen, onNavigate, isOpen, onClose }: SidebarP
           {/* Footer */}
           <div className="p-4 border-t border-white/10">
             <div className="space-y-2">
+              {onReturnToLanding && (
+                <Button
+                  variant="ghost"
+                  className="w-full justify-start gap-3 text-gray-400 hover:text-white hover:bg-white/10"
+                  onClick={() => {
+                    onReturnToLanding();
+                    onClose();
+                  }}
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  Back to Landing
+                </Button>
+              )}
               <Button
                 variant="ghost"
                 className="w-full justify-start gap-3 text-gray-400 hover:text-white hover:bg-white/10"

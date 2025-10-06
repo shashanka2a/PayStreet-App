@@ -25,7 +25,7 @@ export function LandingPage({ onEnterPWA }: LandingPageProps) {
     >
       <Navbar onEnterPWA={onEnterPWA} />
       <HeroSection onEnterPWA={onEnterPWA} />
-      <CoreValueSection />
+      <CoreValueSection onEnterPWA={onEnterPWA} />
       <NoPlatformFeeSection />
       <GlobalBankingSection />
       <SafetySecuritySection />

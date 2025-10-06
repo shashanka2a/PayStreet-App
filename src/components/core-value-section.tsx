@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowRight, TrendingDown, DollarSign, BarChart3 } from "lucide-react";
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
-export function CoreValueSection() {
+interface CoreValueSectionProps {
+  onEnterPWA?: () => void;
+}
+
+export function CoreValueSection({ onEnterPWA }: CoreValueSectionProps = {}) {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background gradient */}
@@ -114,6 +117,7 @@ export function CoreValueSection() {
                 <Button 
                   size="lg" 
                   className="bg-[#00C38A] hover:bg-[#00b37a] text-white px-10 py-6 text-lg transition-all duration-500 relative overflow-hidden group shadow-2xl shadow-[#00C38A]/25 rounded-2xl"
+                  onClick={onEnterPWA}
                 >
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-[#00E598] to-[#00C38A] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -145,18 +149,59 @@ export function CoreValueSection() {
             <div className="relative perspective-1000">
               {/* Main dashboard container */}
               <motion.div
-                className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 overflow-hidden shadow-2xl"
+                className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-2xl rounded-3xl border border-white/20 overflow-hidden shadow-2xl p-8 aspect-[4/3]"
                 whileHover={{ rotateY: 5, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1651129526361-d31cd025e662?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwZGFzaGJvYXJkJTIwZmluYW5jaWFsJTIwaW50ZXJmYWNlfGVufDF8fHx8MTc1OTc2NTcwN3ww&ixlib=rb-4.1.0&q=80&w=1080"
-                  alt="Digital Financial Dashboard"
-                  className="w-full h-auto rounded-3xl"
-                />
+                {/* Custom Dashboard Illustration */}
+                <div className="relative w-full h-full">
+                  {/* Dashboard Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                    </div>
+                    <div className="text-[#00C38A] text-sm font-medium">PayStreet Dashboard</div>
+                  </div>
+                  
+                  {/* Chart Area */}
+                  <div className="bg-white/5 rounded-2xl p-4 mb-4 border border-white/10">
+                    <div className="flex items-end justify-between h-24 space-x-1">
+                      {[40, 65, 85, 45, 70, 90, 60, 75].map((height, i) => (
+                        <motion.div
+                          key={i}
+                          className="bg-gradient-to-t from-[#00C38A] to-[#00E598] rounded-t-lg flex-1"
+                          style={{ height: `${height}%` }}
+                          animate={{
+                            height: [`${height}%`, `${height + 10}%`, `${height}%`]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            delay: i * 0.2,
+                            ease: "easeInOut"
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Stats Cards */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-[#00C38A]/10 rounded-lg p-3 border border-[#00C38A]/20">
+                      <div className="text-[#00C38A] text-lg font-bold">$12.5K</div>
+                      <div className="text-gray-400 text-xs">Saved This Month</div>
+                    </div>
+                    <div className="bg-[#00E598]/10 rounded-lg p-3 border border-[#00E598]/20">
+                      <div className="text-[#00E598] text-lg font-bold">48%</div>
+                      <div className="text-gray-400 text-xs">Cost Reduction</div>
+                    </div>
+                  </div>
+                </div>
                 
                 {/* Overlay with animated elements */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0E]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0E]/20 to-transparent pointer-events-none" />
                 
                 {/* Floating currency symbols */}
                 {['$', '€', '¥', '£'].map((symbol, index) => (

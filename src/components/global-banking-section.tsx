@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Globe, DollarSign, Euro, PoundSterling } from "lucide-react";
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const currencies = [
   { code: "USD", icon: DollarSign, position: { top: "20%", left: "15%" } },
@@ -177,23 +176,63 @@ export function GlobalBankingSection() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {/* Globe background */}
+                {/* Custom Globe Illustration */}
                 <motion.div
-                  className="relative w-full h-full rounded-full overflow-hidden"
+                  className="relative w-full h-full rounded-full overflow-hidden bg-gradient-to-br from-[#0B1F1A] via-[#0D2B1F] to-[#0F3524]"
                   animate={{ rotateY: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 >
-                  <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1742415105376-43d3a5fd03fc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnbG9iZSUyMHdvcmxkJTIwbWFwJTIwZGlnaXRhbHxlbnwxfHx8fDE3NTk3NjU3MTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Global World Map"
-                    className="w-full h-full object-cover rounded-full filter brightness-50"
-                  />
+                  {/* Globe Grid Pattern */}
+                  <div className="absolute inset-0 rounded-full">
+                    {/* Longitude lines */}
+                    {[...Array(8)].map((_, i) => (
+                      <div
+                        key={`long-${i}`}
+                        className="absolute top-0 left-1/2 w-px h-full bg-[#00C38A]/20"
+                        style={{
+                          transform: `translateX(-50%) rotateZ(${i * 22.5}deg)`,
+                          transformOrigin: '50% 50%'
+                        }}
+                      />
+                    ))}
+                    
+                    {/* Latitude lines */}
+                    {[25, 50, 75].map((top) => (
+                      <div
+                        key={`lat-${top}`}
+                        className="absolute left-1/2 w-full h-px bg-[#00C38A]/20"
+                        style={{
+                          top: `${top}%`,
+                          transform: 'translateX(-50%)',
+                          borderRadius: '50%'
+                        }}
+                      />
+                    ))}
+                  </div>
+                  
+                  {/* Continents Representation */}
+                  <div className="absolute inset-0 rounded-full">
+                    {/* North America */}
+                    <div className="absolute top-[25%] left-[15%] w-8 h-6 bg-[#00C38A]/30 rounded-full" />
+                    
+                    {/* Europe */}
+                    <div className="absolute top-[30%] left-[45%] w-4 h-4 bg-[#00C38A]/30 rounded-full" />
+                    
+                    {/* Asia */}
+                    <div className="absolute top-[35%] right-[20%] w-12 h-8 bg-[#00C38A]/30 rounded-full" />
+                    
+                    {/* Africa */}
+                    <div className="absolute top-[45%] left-[40%] w-6 h-10 bg-[#00C38A]/30 rounded-full" />
+                    
+                    {/* Australia */}
+                    <div className="absolute bottom-[25%] right-[25%] w-4 h-3 bg-[#00C38A]/30 rounded-full" />
+                  </div>
                   
                   {/* Globe overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00C38A]/20 via-transparent to-[#00E598]/20 rounded-full" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00C38A]/10 via-transparent to-[#00E598]/10 rounded-full" />
                   
                   {/* Glowing rim */}
-                  <div className="absolute inset-0 rounded-full border-4 border-[#00C38A]/30 shadow-inner" />
+                  <div className="absolute inset-0 rounded-full border-2 border-[#00C38A]/30 shadow-inner" />
                 </motion.div>
 
                 {/* Orbiting currency icons */}

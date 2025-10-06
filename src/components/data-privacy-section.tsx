@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Cloud, Lock, Shield, Database, FileText, Key } from "lucide-react";
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function DataPrivacySection() {
   return (
@@ -174,9 +173,9 @@ export function DataPrivacySection() {
                 whileHover={{ scale: 1.05, rotateX: 5 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {/* Background cloud security image */}
+                {/* Custom Cloud Data Center Illustration */}
                 <motion.div
-                  className="relative w-full h-full rounded-3xl overflow-hidden"
+                  className="relative w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-[#0A1A1F] via-[#0D252B] to-[#0F2F35]"
                   animate={{
                     scale: [1, 1.02, 1]
                   }}
@@ -186,14 +185,91 @@ export function DataPrivacySection() {
                     ease: "easeInOut"
                   }}
                 >
-                  <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1667372283496-893f0b1e7c16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMHNlY3VyaXR5JTIwZW5jcnlwdGlvbiUyMGRhdGF8ZW58MXx8fHwxNzU5NzY1NzE4fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Cloud Security Encryption"
-                    className="w-full h-full object-cover filter brightness-30"
-                  />
+                  {/* Data Server Racks */}
+                  <div className="absolute inset-0 p-8">
+                    <div className="grid grid-cols-3 gap-4 h-full">
+                      {[...Array(9)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          className="bg-gradient-to-t from-[#00C38A]/10 to-[#00C38A]/5 rounded-lg border border-[#00C38A]/20 relative overflow-hidden"
+                          animate={{
+                            opacity: [0.5, 1, 0.5],
+                            scale: [1, 1.02, 1]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            delay: i * 0.3,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          {/* Server lights */}
+                          <div className="absolute top-2 left-2 flex space-x-1">
+                            <motion.div
+                              className="w-1 h-1 bg-[#00C38A] rounded-full"
+                              animate={{
+                                opacity: [0.3, 1, 0.3]
+                              }}
+                              transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                delay: i * 0.1
+                              }}
+                            />
+                            <motion.div
+                              className="w-1 h-1 bg-blue-400 rounded-full"
+                              animate={{
+                                opacity: [1, 0.3, 1]
+                              }}
+                              transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                                delay: i * 0.1 + 0.5
+                              }}
+                            />
+                          </div>
+                          
+                          {/* Data lines */}
+                          <div className="absolute inset-0 p-1">
+                            {[...Array(3)].map((_, j) => (
+                              <div
+                                key={j}
+                                className="w-full h-px bg-[#00C38A]/20 mb-1"
+                                style={{ marginTop: `${(j + 1) * 25}%` }}
+                              />
+                            ))}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Cloud data streams */}
+                  <div className="absolute inset-0">
+                    {[...Array(20)].map((_, i) => (
+                      <motion.div
+                        key={i}
+                        className="absolute w-1 h-1 bg-[#00C38A] rounded-full opacity-60"
+                        style={{
+                          left: `${Math.random() * 100}%`,
+                          top: `${Math.random() * 100}%`
+                        }}
+                        animate={{
+                          y: [0, -400],
+                          opacity: [0, 1, 0]
+                        }}
+                        transition={{
+                          duration: 4 + Math.random() * 2,
+                          repeat: Infinity,
+                          delay: Math.random() * 3,
+                          ease: "easeOut"
+                        }}
+                      />
+                    ))}
+                  </div>
                   
                   {/* Cloud data overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00C38A]/20 via-transparent to-[#00E598]/15" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00C38A]/10 via-transparent to-[#00E598]/10" />
                 </motion.div>
 
                 {/* Central cloud icon with encryption glow */}

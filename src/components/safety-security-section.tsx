@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Shield, Lock, Eye, Key, CheckCircle } from "lucide-react";
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function SafetySecuritySection() {
   return (
@@ -147,9 +146,9 @@ export function SafetySecuritySection() {
                 whileHover={{ scale: 1.05, rotateY: 10 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {/* Background security image */}
+                {/* Custom Security Shield Illustration */}
                 <motion.div
-                  className="relative w-full h-full rounded-3xl overflow-hidden"
+                  className="relative w-full h-full rounded-3xl overflow-hidden bg-gradient-to-br from-[#0A1F1A] via-[#0D2B1F] to-[#0F3524]"
                   animate={{
                     scale: [1, 1.02, 1]
                   }}
@@ -159,14 +158,73 @@ export function SafetySecuritySection() {
                     ease: "easeInOut"
                   }}
                 >
-                  <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1652148555073-4b1d2ecd664c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZWN1cml0eSUyMHNoaWVsZCUyMHByb3RlY3Rpb258ZW58MXx8fHwxNzU5NjU3NDM0fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                    alt="Security Shield Protection"
-                    className="w-full h-full object-cover filter brightness-40"
-                  />
+                  {/* Security Pattern Background */}
+                  <div className="absolute inset-0">
+                    {/* Hexagonal Security Pattern */}
+                    <div className="absolute inset-0 opacity-20">
+                      {[...Array(25)].map((_, i) => {
+                        const row = Math.floor(i / 5);
+                        const col = i % 5;
+                        const offsetX = row % 2 === 1 ? 20 : 0;
+                        return (
+                          <motion.div
+                            key={i}
+                            className="absolute w-8 h-8 border border-[#00C38A]/30"
+                            style={{
+                              left: `${col * 20 + offsetX}%`,
+                              top: `${row * 15}%`,
+                              clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)'
+                            }}
+                            animate={{
+                              opacity: [0.2, 0.5, 0.2],
+                              scale: [1, 1.1, 1]
+                            }}
+                            transition={{
+                              duration: 4,
+                              repeat: Infinity,
+                              delay: i * 0.1,
+                              ease: "easeInOut"
+                            }}
+                          />
+                        );
+                      })}
+                    </div>
+                    
+                    {/* Circuit Board Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <svg width="100%" height="100%" viewBox="0 0 400 400">
+                        <path
+                          d="M50 50 L350 50 L350 350 L50 350 Z M100 100 L300 100 M100 200 L300 200 M100 300 L300 300 M100 50 L100 350 M200 50 L200 350 M300 50 L300 350"
+                          stroke="rgba(0, 195, 138, 0.3)"
+                          strokeWidth="2"
+                          fill="none"
+                        />
+                        {/* Circuit nodes */}
+                        {[...Array(12)].map((_, i) => (
+                          <motion.circle
+                            key={i}
+                            cx={100 + (i % 3) * 100}
+                            cy={100 + Math.floor(i / 3) * 100}
+                            r="4"
+                            fill="#00C38A"
+                            animate={{
+                              r: [4, 6, 4],
+                              opacity: [0.5, 1, 0.5]
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              delay: i * 0.2,
+                              ease: "easeInOut"
+                            }}
+                          />
+                        ))}
+                      </svg>
+                    </div>
+                  </div>
                   
                   {/* Security overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00C38A]/20 via-transparent to-[#00E598]/15" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00C38A]/15 via-transparent to-[#00E598]/10" />
                 </motion.div>
 
                 {/* Central shield icon with glow */}

@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Button } from "./ui/button";
 import { ChevronDown, Menu, X, LogIn } from "lucide-react";
-import Image from "next/image";
 
 const navigationItems = [
   {
@@ -87,7 +86,9 @@ export function Navbar({ onEnterPWA }: NavbarProps = {}) {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <a href="#" className="flex items-center">
-                <Image src="/assets/0ba5ed6f1acbe5fec390ff0fb362bc84a34ec2c1.png" alt="Paystreet" width={120} height={32} className="h-8 w-auto" />
+                <div className="text-2xl font-bold text-white">
+                  Pay<span className="text-[#00C38A]">Street</span>
+                </div>
               </a>
             </motion.div>
 
