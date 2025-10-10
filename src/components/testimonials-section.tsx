@@ -6,7 +6,7 @@ const testimonials = [
     name: "Sarah Chen",
     role: "CFO, TechCorp",
     company: "TechCorp International",
-    content: "Paystreet has transformed our cross-border payments. Zero hidden fees and instant settlements have saved us thousands monthly.",
+    content: "Payflow has transformed our cross-border payments. Zero hidden fees and instant settlements have saved us thousands monthly.",
     rating: 5,
     avatar: "SC"
   },
@@ -14,7 +14,7 @@ const testimonials = [
     name: "Michael Rodriguez",
     role: "Finance Director",
     company: "Global Ventures",
-    content: "The transparency and speed of Paystreet's platform is unmatched. Our international operations run seamlessly now.",
+    content: "The transparency and speed of Payflow's platform is unmatched. Our international operations run seamlessly now.",
     rating: 5,
     avatar: "MR"
   },
@@ -22,7 +22,7 @@ const testimonials = [
     name: "Emma Thompson",
     role: "Treasury Manager",
     company: "InnovateLtd",
-    content: "Enterprise-grade security with consumer-level simplicity. Paystreet delivers on every promise.",
+    content: "Enterprise-grade security with consumer-level simplicity. Payflow delivers on every promise.",
     rating: 5,
     avatar: "ET"
   }
@@ -58,7 +58,7 @@ export function TestimonialsSection() {
             Trusted by <span className="text-[#00C38A]">10,000+</span> businesses globally
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join companies worldwide who trust Paystreet for their cross-border financial operations
+            Join companies worldwide who trust Payflow for their cross-border financial operations
           </p>
         </motion.div>
 

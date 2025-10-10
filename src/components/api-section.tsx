@@ -49,7 +49,7 @@ export function ApiSection() {
           </h2>
 
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Integrate Paystreet's financial infrastructure into your applications with our 
+            Integrate Payflow's financial infrastructure into your applications with our 
             comprehensive RESTful API. Built for developers, trusted by enterprises.
           </p>
         </div>
@@ -96,17 +96,17 @@ export function ApiSection() {
           </div>
           
           <div className="bg-gray-900 rounded-xl p-6 font-mono text-sm overflow-x-auto">
-            <div className="text-gray-500 mb-2">// Initialize Paystreet SDK</div>
+            <div className="text-gray-500 mb-2">// Initialize Payflow SDK</div>
             <div className="text-blue-400">import</div>
-            <div className="text-white"> PaystreetSDK </div>
+            <div className="text-white"> PayflowSDK </div>
             <div className="text-blue-400">from</div>
-            <div className="text-green-400"> '@paystreet/sdk'</div>
+            <div className="text-green-400"> '@payflow/sdk'</div>
             <div className="text-white">;</div>
             <br />
             <div className="text-blue-400 mt-4">const</div>
-            <div className="text-white"> paystreet = </div>
+            <div className="text-white"> payflow = </div>
             <div className="text-blue-400">new</div>
-            <div className="text-yellow-400"> PaystreetSDK</div>
+            <div className="text-yellow-400"> PayflowSDK</div>
             <div className="text-white">(</div>
             <div className="text-green-400">'your-api-key'</div>
             <div className="text-white">);</div>
@@ -115,7 +115,7 @@ export function ApiSection() {
             <div className="text-blue-400">const</div>
             <div className="text-white"> payment = </div>
             <div className="text-blue-400">await</div>
-            <div className="text-white"> paystreet.payments.</div>
+            <div className="text-white"> payflow.payments.</div>
             <div className="text-yellow-400">create</div>
             <div className="text-white">(&#123;</div>
             <div className="text-white ml-4">amount: </div>

@@ -162,7 +162,7 @@ export function CoreValueSection({ onEnterPWA }: CoreValueSectionProps = {}) {
                       <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                       <div className="w-3 h-3 bg-green-400 rounded-full"></div>
                     </div>
-                    <div className="text-[#00C38A] text-sm font-medium">PayStreet Dashboard</div>
+                    <div className="text-[#00C38A] text-sm font-medium">PayFlow Dashboard</div>
                   </div>
                   
                   {/* Chart Area */}

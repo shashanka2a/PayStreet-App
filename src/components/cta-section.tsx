@@ -26,7 +26,7 @@ export function CtaSection({ onEnterPWA }: CtaSectionProps = {}) {
             viewport={{ once: true }}
           >
             Ready to revolutionize your payments?{" "}
-            <span className="text-paystreet-green">Launch the Paystreet app now.</span>
+            <span className="text-paystreet-green">Launch the Payflow app now.</span>
           </motion.h2>
           
           {/* Animated arrow leading to CTAs */}

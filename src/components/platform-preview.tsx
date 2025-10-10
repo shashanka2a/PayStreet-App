@@ -27,7 +27,7 @@ export function PlatformPreview() {
           </h2>
 
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Access your Paystreet account seamlessly across all your devices. 
+            Access your Payflow account seamlessly across all your devices. 
             Same experience, same security, unlimited possibilities.
           </p>
         </div>

@@ -63,7 +63,7 @@ export function Sidebar({ currentScreen, onNavigate, isOpen, onClose, onReturnTo
               <div className="w-8 h-8 rounded-lg bg-paystreet-green flex items-center justify-center">
                 <span className="font-clash text-black text-sm">P</span>
               </div>
-              <span className="font-clash text-white text-lg">Paystreet</span>
+              <span className="font-clash text-white text-lg">Payflow</span>
             </div>
             <Button
               variant="ghost"

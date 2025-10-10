@@ -25,7 +25,7 @@ export function AboutSection() {
               >
                 <ImageWithFallback
                   src="https://images.unsplash.com/photo-1754704631226-c5613ac5abb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMENFTyUyMGV4ZWN1dGl2ZSUyMHBvcnRyYWl0fGVufDF8fHx8MTc1OTc2MzQ4NXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="CEO of Paystreet"
+                  alt="CEO of Payflow"
                   className="w-full h-[600px] object-cover"
                 />
                 
@@ -86,7 +86,7 @@ export function AboutSection() {
               viewport={{ once: true }}
             >
               <p>
-                At Paystreet, we believe that financial borders shouldn't limit business growth. 
+                At Payflow, we believe that financial borders shouldn't limit business growth. 
                 Founded by a team of fintech veterans and former banking executives, we've experienced 
                 firsthand the frustrations of opaque fees and slow international transfers.
               </p>

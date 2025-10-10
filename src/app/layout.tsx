@@ -12,15 +12,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PayStreet",
+  title: "PayFlow",
   description: "Cross-border payments and global financial infrastructure.",
-  applicationName: "PayStreet",
+  applicationName: "PayFlow",
   metadataBase: new URL("https://example.com"),
   openGraph: {
-    title: "PayStreet",
+    title: "PayFlow",
     description: "Cross-border payments and global financial infrastructure.",
     images: [
-      { url: "/og.png", width: 1200, height: 630, alt: "PayStreet" },
+      { url: "/og.png", width: 1200, height: 630, alt: "PayFlow" },
     ],
   },
   icons: {

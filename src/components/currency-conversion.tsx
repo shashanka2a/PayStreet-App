@@ -237,7 +237,7 @@ export function CurrencyConversion({ onNavigate }: CurrencyConversionProps) {
                   <span className="text-white">1 {conversionData.fromCurrency} = {conversionData.rate.toFixed(4)} {conversionData.toCurrency}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-400">Paystreet Markup</span>
+                  <span className="text-gray-400">Payflow Markup</span>
                   <span className="text-white">{conversionData.markup}%</span>
                 </div>
                 <div className="flex justify-between">

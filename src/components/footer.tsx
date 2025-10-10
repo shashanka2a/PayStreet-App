@@ -45,7 +45,7 @@ export function Footer() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              Paystreet.io
+              Payflow.io
             </motion.h3>
             <p className="text-gray-400 max-w-md mx-auto">
               Seamless global finance for the modern business
@@ -96,7 +96,7 @@ export function Footer() {
             </div>
             
             <div className="text-gray-500 text-sm">
-              © 2024 Paystreet.io. All rights reserved.
+              © 2024 Payflow.io. All rights reserved.
             </div>
           </motion.div>
         </motion.div>

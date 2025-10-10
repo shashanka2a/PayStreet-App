@@ -144,7 +144,7 @@ export function NoPlatformFeeSection() {
                     {/* Top Section */}
                     <div className="flex justify-between items-start">
                       <div>
-                        <div className="text-sm opacity-80 mb-1">PayStreet Card</div>
+                        <div className="text-sm opacity-80 mb-1">PayFlow Card</div>
                         <div className="text-xs opacity-60">Premium Business</div>
                       </div>
                       <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
