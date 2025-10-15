@@ -87,7 +87,7 @@ export function Navbar({ onEnterPWA }: NavbarProps = {}) {
             >
               <a href="#" className="flex items-center">
                 <div className="text-2xl font-bold text-white">
-                  Pay<span className="text-[#00C38A]">Street</span>
+                  Pay<span className="text-[#00C38A]">Flow</span>
                 </div>
               </a>
             </motion.div>
