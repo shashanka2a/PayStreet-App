@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#0A0F0D"/>
+  <circle cx="32" cy="32" r="28" fill="#0F1513"/>
+
+  <!-- Cash / banknote (Lucide-like strokes) -->
+  <g stroke="#00C38A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer note -->
+    <rect x="16" y="22" width="32" height="20" rx="4" fill="rgba(0,195,138,0.06)"/>
+    <!-- Corners accents -->
+    <path d="M20 26h0"/>
+    <path d="M44 26h0"/>
+    <path d="M20 38h0"/>
+    <path d="M44 38h0"/>
+    <!-- Inner circle value -->
+    <circle cx="32" cy="32" r="6" fill="rgba(0,195,138,0.08)"/>
+    <!-- Currency stroke S-like -->
+    <path d="M29.5 34.5c1.2 1 2.7 1.5 4.2 1.1 1.3-.3 2.3-1.2 2.3-2.4 0-1.5-1.4-2.1-3.1-2.5-1.7-.4-3.1-1-3.1-2.5 0-1.2 1-2.1 2.3-2.4 1.5-.4 3 .1 4.2 1.1"/>
+    <path d="M32 25v14"/>
+  </g>
+
+  <!-- Subtle glow -->
+  <ellipse cx="32" cy="50" rx="16" ry="4" fill="#00C38A" opacity="0.15"/>
+</svg>
+
